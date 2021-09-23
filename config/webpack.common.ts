@@ -8,7 +8,7 @@ const config: Configuration = {
     module: {
         rules: [
             {
-                test: /\.(ts|js)x?$/i,
+                test: /\.(js)x?$/i,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -16,6 +16,11 @@ const config: Configuration = {
                         presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
                     },
                 },
+            },
+            {
+                test: /\.(ts)x?$/i,
+                exclude: /node_modules/,
+                loader: 'ts-loader'
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
